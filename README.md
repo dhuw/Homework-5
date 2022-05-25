@@ -32,7 +32,7 @@ THEN the saved events persist
 You are required to submit the following for review:
 
 * The URL of the deployed application
-</br>www.example.com
+</br>https://dhuw.github.io/Homework-5/
 
 * The URL of the GitHub repository, with a unique name and a README describing the project
 </br>https://github.com/dhuw/Homework-5
