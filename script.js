@@ -6,19 +6,6 @@ setInterval(() => {
     currentDay.textContent = humanReadable;
 }, 1000);
 
-//save data from tb to local storage
-//------------------didnt work--------------------
-// function saveSettings() {
-//     var tb8 = $('#8am-text').value;
-//
-//     localStorage.tb8 = $('#8am-text').val();
-// };
-
-// function loadSettings() {
-//    $('#8am-text').val(localStorage.tb8);
-//};
-//------------------didnt work--------------------
-
 //bg color change for past present and future
 //defining var
 var currentHour = moment().format('HH');
@@ -114,5 +101,17 @@ if (currentHour === 24) {
 
 //console logging to make sure things work
 console.log(currentHour);
+
+//save data from tb to local storage
+$('saveBtn').click(function() {
+    var tb8 = $('#8am-text').val();
+    var tb8JSON = JSON.stringify(tb8);
+    localStorage.setItem('8am-textbox', tb8JSON);
+});
+
+//retrieve function
+var tb8Local = localStorage.getItem('8am-textbox');
+var tb8Text = JSON.parse(tb8Local);
+$('#8am-text').innerHTML = tb8Text.name;
 
 //TO DO: make text box save on click and have text remain when page is refreshed
